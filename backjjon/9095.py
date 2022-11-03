@@ -1,6 +1,6 @@
 import sys
 input = sys.stdin.readline
-T = int(input())
+num = int(input())
 
 
 def sol(n):
@@ -11,12 +11,12 @@ def sol(n):
         return 2
 
     elif n == 3:
-        return 3
+        return 4
 
     else:
         return sol(n-1) + sol(n-2) + sol(n-3)
 
 
-for i in range(T):
+for i in range(num):
     n = int(input())
     print(sol(n))
