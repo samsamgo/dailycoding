@@ -16,7 +16,7 @@ rl.on('close', () => {
     const board = input.slice(1, 1 + N)
         .map((v) => v.split(' ').map((v) => Number(v)));//중간꺼
     const commands = input[1 + N].split(' ').map((v) => Number(v));//마지막 꺼
-    console.log(MakeMap(N, M, x, y, board, commands))
+    MakeMap(N, M, x, y, board, commands)
     process.exit();
 })
 
