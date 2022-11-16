@@ -19,7 +19,26 @@ rl.on('close', () => {
     const dir = input.slice(2 + N, turn + 2)
         .map((v) => v.split(' ').map((v) => Number(v)));
 
-    console.log(dir)
+    let gear_same = [];//3시 방향과 9시 방향의 숫자들
+    for (const gear in board) {
+        gear_same.push(gear.indexOf(2), gear.indexOf(5))
+
+    }
+    /* for (const gear in dir) {
+         if (gear[1] === 1) {
+             gear_same[gear[0]].unshift(gear_same[gear[0]].indexOf(gear_same[gear[0]].length))
+             gear_same[gear[0]].pop();
+ 
+         }
+         else {
+             gear_same[gear[0]].push(gear_same[gear[0]].indexOf(0))
+             gear_same[gear[0]].shift();
+         }
+     }*/
+
+    console.log(chunk(gear_same, 2))
+    //console.log(dir)
     process.exit();
 })
+
 
