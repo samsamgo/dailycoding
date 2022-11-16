@@ -22,22 +22,25 @@ rl.on('close', () => {
     let gear_same = [];//3시 방향과 9시 방향의 숫자들
     for (const gear in board) {
         gear_same.push(gear.indexOf(2), gear.indexOf(5))
+    }
+
+    for (const gear in dir) {
+        let result = board[dir[gear][0] - 1]
+        if (gear[1] === 1) {
+            result = result + result.indexOf(7)
+            result = result.slice(0, 8);
+        }
+        else {
+            result = result.indexOf(0) + result
+            result = result.slice(1, 9);
+
+        }
+        console.log(result)
 
     }
-    /* for (const gear in dir) {
-         if (gear[1] === 1) {
-             gear_same[gear[0]].unshift(gear_same[gear[0]].indexOf(gear_same[gear[0]].length))
-             gear_same[gear[0]].pop();
- 
-         }
-         else {
-             gear_same[gear[0]].push(gear_same[gear[0]].indexOf(0))
-             gear_same[gear[0]].shift();
-         }
-     }*/
 
-    console.log(chunk(gear_same, 2))
-    //console.log(dir)
+
+    console.log(dir[0][0])
     process.exit();
 })
 
