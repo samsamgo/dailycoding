@@ -29,13 +29,14 @@ rl.on('close', () => {
         if (gear[1] === 1) {
             result = result + result.indexOf(7)
             result = result.slice(0, 8);
+            //if (gear_same)
         }
         else {
             result = result.indexOf(0) + result
             result = result.slice(1, 9);
 
         }
-        console.log(result)
+        console.log(gear_same[1])
 
     }
 
