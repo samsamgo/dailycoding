@@ -29,7 +29,14 @@ rl.on('close', () => {
         if (gear[1] === 1) {
             result = result + result.indexOf(7)
             result = result.slice(0, 8);
-            //if (gear_same)
+            if (gear_same[1+gear[0]] !== gear_same[gear[0]]){
+                
+            }
+            if (gear_same[gear[0]-1] !== gear_same[gear[0]]){
+
+            }
+       
+
         }
         else {
             result = result.indexOf(0) + result
